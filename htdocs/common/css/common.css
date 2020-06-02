@@ -1,0 +1,685 @@
+/*
+@media screen and (max-width: 767px) {}
+@media screen and (max-width: 320px) {}
+ */
+@charset "utf-8";
+
+@font-face {
+    font-family: 'abacus';
+    /*src:url('./font/fontawesome-webfont.svg');*/
+    src: url('./font/ABACUS2.TTF');
+}
+
+
+body, input, textarea, select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    line-height: 1.75em;
+    color: #777;
+    margin: 0;
+}
+
+@media screen and (max-width: 320px) {
+    body, input, textarea, select {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1.75em;
+        color: #777;
+        margin: 0;
+    }
+}
+
+body, #wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f2f2f2;
+}
+
+
+img {
+    outline: none;
+    border-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    letter-spacing: -0.025em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a {
+    color: #80BA8E;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #f9f6ff;
+
+}
+
+a:hover {
+    color: #80BA8E;
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    border-top: solid 1px #ddd;
+    margin: 4em 0 4em 0;
+}
+
+p, ul, ol, dl, table {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+}
+
+/*-----------------------------------------
+ images
+*/
+.image {
+    display: inline-block;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+}
+
+.image.left {
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
+.image.centered {
+    display: block;
+    margin: 0 0 2em 0;
+}
+
+/*-----------------------------------------
+ list
+*/
+ul.default,
+ul.style,
+ul.horizontal {
+    margin: 0;
+    padding: 0 0 1.5em 0;
+}
+
+ul.default li,
+ul.style li {
+    font-size: 0.95rem;
+    border-top: 1px solid;
+    border-color: rgba(0, 0, 0, .1);
+}
+
+ul.default li:first-child,
+ul.style li:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+/* dice */
+ul.default li {
+    padding: 0.6em 0;
+}
+
+/* style */
+ul.style li {
+    padding: 2em 0 1.5em 0;
+}
+
+ul.style .posted {
+    padding: 0em 0em 1em 0em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 18pt;
+    color: #A2A2A2;
+}
+
+/* horizontal */
+ul.horizontal li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+ul.horizontal li a {
+    color: inherit;
+    font-size: 1.75em;
+    display: inline-block;
+}
+
+ul.horizontal li a:hover {
+    color: #fff;
+}
+
+/* dice */
+ul.dice {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul.dice li {
+    display: inline-block;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+ul.dice img {
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width: 767px) {
+    ul.dice li {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    ul.dice img {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+
+/*-----------------------------------------
+ button
+*/
+.btn {
+    position: relative;
+    display: inline-block;
+    background: #80ba8e;
+    padding: 0.8em 2em;
+    text-decoration: none !important;
+    font-size: 1.2rem;
+    color: #fff !important;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #566c25;
+    color: #FFF !important;
+}
+
+.btn.small {
+    padding: 0.6em 1em;
+    font-size: 1rem;
+}
+
+.btn.minimum {
+    padding: 0.2em 0.6em;
+    font-size: 1rem;
+}
+
+.btn.gray {
+    background: gray;
+}
+
+.btn.active {
+    background: #F7958E;
+}
+.btn.active_level{
+    background: #F7958E;
+}
+.btn_box {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.btn_box div {
+    margin: 0 auto;
+}
+
+
+/*-----------------------------------------
+ header
+*/
+header {
+    position: relative;
+}
+
+header h1, header span {
+    display: none;
+}
+
+/*-----------------------------------------
+ nav
+*/
+nav {
+    text-align: center;
+    background: #709387;
+    height: 42px;
+}
+
+nav > ul {
+    background: rgba(0, 0, 0, .1);
+}
+
+nav > ul > li {
+    display: inline-block;
+    border-right: 1px solid;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+nav > ul > li:last-child {
+    padding-right: 0;
+    border-right: none;
+}
+
+nav > ul > li > a,
+nav > ul > li > span {
+    display: inline-block;
+    padding: .7rem .7rem;
+    letter-spacing: 0.06rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    outline: 0;
+    color: #fff;
+}
+
+nav > a:active {
+    color: #fff !important;
+}
+
+nav.green {
+    background: #5d827a;
+}
+
+
+/*
+ハンバーガーメニュー
+-----------------------------------*/
+nav.globalMenuSp {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    /*background-image: url("/backup/images/homare/bg01.jpg");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav.globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+nav.globalMenuSp ul li {
+    display: block;
+    font-size: 0.9em;
+    list-style-type: none;
+    padding: 0;
+    /*background: url('/backup/images/homare/line.png') repeat-x left bottom;*/
+    padding: 8px 0 7px;
+    position: relative;
+}
+
+/*nav.globalMenuSp ul li {font-size: 1.1em; list-style-type: none; padding: 0; width: 100%; border-bottom: 1px dotted #333;}*/
+nav.globalMenuSp ul li a {
+    display: block;
+    color: #917d75;
+    padding: 0.4em 0;
+    text-decoration: none;
+}
+
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* 最後はラインを描かない */
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+    transform: translateY(0%);
+}
+
+/* トグル */
+.navToggle {
+    display: block;
+    position: fixed;
+    right: 10px;
+    top: 6px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    z-index: 3;
+    /*background-image: url("/backup/images/homare/menu-icon.png");*/
+    background-size: 34px;
+}
+
+
+/*-----------------------------------------
+ main
+*/
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*-----------------------------------------
+ footer
+*/
+footer {
+    position: relative;
+    text-align: center;
+    background: #323232;
+    color: #fff;
+    font-size: 0.6rem;
+    margin-top: auto;
+    height: 26px;
+}
+
+/*-----------------------------------------
+ article
+*/
+article {
+    width: 100%;
+    padding: 20px 0 20px;
+}
+
+article h1 {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+article p {
+    text-align: center;
+    display: block;
+}
+
+/*-----------------------------------------
+ section
+*/
+section {
+    margin-bottom: 20px;
+}
+
+/*-----------------------------------------
+ page top
+*/
+#page_top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    opacity: 0.6;
+    border-radius: 50%;
+    background: rgba(98, 85, 85, .8);
+    color: #dbdbdb;
+    text-align: center;
+    z-index: 1000;
+    cursor: pointer;
+    line-height: 1.25rem;
+    padding-top: 4px;
+}
+
+/*-----------------------------------------
+ foot, buttons
+*/
+.foot {
+    position: fixed;
+    text-align: center;
+    margin-top: auto;
+    bottom: 10px;
+    width: 100%;
+}
+
+.foot div {
+    font-size: 1rem;
+}
+
+.btn_start {
+    background: #625555;
+    padding: 5px 0;
+    width: 20rem;
+}
+#js_reset{
+    background: gray;
+}
+@media (max-height: 550px) {
+    /* キーボードが表示されたときなどは、リセットボタン非表示 */
+    #js_reset {
+        display: none;
+    }
+}
+
+/*-----------------------------------------
+ row
+*/
+.rows {
+    display: flex;
+    text-align: center;
+}
+
+.rows section.row_3 {
+    width: 33.33%;
+}
+
+.rows section.row_2 {
+    width: 50%;
+}
+
+.rows h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.rows section > p {
+    min-height: 70px;
+    margin: 0 auto 20px;
+    width: 70%;
+    color: #a9a9a9;
+}
+
+.rows img {
+    width: 70%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 150px;
+}
+
+
+/*-----------------------------------------
+ fa
+*/
+.fa-gray {
+    color: #dddddd;
+}
+
+
+@media screen and (max-width: 767px) {
+    .rows {
+        display: block;
+        text-align: center;
+    }
+
+    .rows section.row_3,
+    .rows section.row_2 {
+        width: 100%;
+    }
+
+    .rows img {
+        width: 70%;
+        max-width: 500px;
+        margin: 0 auto;
+        height: 110px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .rows {
+        display: block;
+        text-align: center;
+    }
+
+    .rows section.row_3,
+    .rows section.row_2 {
+        width: 100%;
+    }
+}
+
+/*-----------------------------------------
+ text
+*/
+.error {
+    color: red !important;
+}
+
+.ruby {
+    font-size: .8rem;
+}
+
+.text_right {
+    text-aling: right;
+}
+
+.text_left {
+    text-aling: left;
+}
+
+.text_center {
+    text-aling: center;
+}
+
+
+/* 横並び */
+.flex_box {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*-----------------------------------------
+ テンキー
+*/
+.tenkey_box {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px;
+    border: 1px solid #b3c8b7;
+    border-radius: 3px;
+    padding: 0 0 5px 15px;
+    margin-top: 6px;
+}
+
+.tenkey_box3 {
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    /*border: 1px solid #d5d7d3;*/
+    /*border-radius: 3px;*/
+    padding: 0 0 5px 15px;
+    margin: 6px auto;
+    width: 17rem;
+}
+
+.tenkey {
+    height: 65px;
+    line-height: 65px;
+    margin-top: 6px;
+    border: 1px solid #d4ddd4;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 5px;
+    background: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tenkey:hover {
+    background: #eaffee;
+}
+
+@media screen and (max-width: 365px) {
+    .tenkey_box3 {
+        display: grid;
+        grid-template-columns: 70px 70px 70px;
+        padding: 0 0 5px 15px;
+        margin: 6px auto;
+        width: 16rem;
+    }
+
+    .tenkey {
+        height: 55px;
+        line-height: 55px;
+        margin-top: 6px;
+    }
+}
+
+
+.noborder {
+    border: none;
+}
+
+.game_container {
+    /*position:relative;*/
+    width: 22em;
+    margin: 6px auto;
+    padding-top: 20px;
+    user-select: none;
+    /*background: #e7d2f8;*/
+}
+
+.w_15 {
+    width: 15em;
+}
+
+.w_20 {
+    width: 20em;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.mb_20 {
+    margin-bottom: 20px;
+}
+
+.mb_10 {
+    margin-bottom: 10px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.icon {
+    width: 20px;
+    cursor: pointer;
+}
+
